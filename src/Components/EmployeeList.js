@@ -11,7 +11,7 @@ function EmployeeList() {
   const fetchEmployees = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/employees/getAll`
+        `https://cstream-organization-management.onrender.com/api/employees/getAll`
       );
       console.log(response.data);
       setEmployee(response.data);

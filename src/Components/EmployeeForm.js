@@ -21,13 +21,16 @@ function EmployeeForm(props) {
         }
       });
 
-      await axios.post("http://localhost:8080/api/employees/create", {
-        name: name,
-        dob: dob,
-        phoneNumber: phoneNumber,
-        address: address,
-        organization: organizationId,
-      });
+      await axios.post(
+        "https://cstream-organization-management.onrender.com/api/employees/create",
+        {
+          name: name,
+          dob: dob,
+          phoneNumber: phoneNumber,
+          address: address,
+          organization: organizationId,
+        }
+      );
       navigate("/employeesList");
       console.log({
         name,

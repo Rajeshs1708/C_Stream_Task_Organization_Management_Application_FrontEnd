@@ -19,7 +19,7 @@ function App() {
   const fetchOrganizations = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/organizations/getAll"
+        "https://cstream-organization-management.onrender.com/api/organizations/getAll"
       );
       setOrganizations(response.data);
     } catch (error) {

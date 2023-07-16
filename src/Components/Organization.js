@@ -10,11 +10,14 @@ function Organization(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8080/api/organizations/create", {
-        name: name,
-        registrationDate: registrationDate,
-        address: address,
-      });
+      await axios.post(
+        "https://cstream-organization-management.onrender.com/api/organizations/create",
+        {
+          name: name,
+          registrationDate: registrationDate,
+          address: address,
+        }
+      );
       console.log({ name, registrationDate, address });
       console.log("Created Successfully");
     } catch (error) {

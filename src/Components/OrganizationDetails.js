@@ -17,7 +17,7 @@ function OrganizationDetails() {
   const fetchOrganization = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/organizations/getSingle/${id}`
+        `https://cstream-organization-management.onrender.com/api/organizations/getSingle/${id}`
       );
       console.log(response.data);
       setOrganization(response.data);
@@ -28,7 +28,7 @@ function OrganizationDetails() {
   const fetchEmployee = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/employees/getAll`
+        `https://cstream-organization-management.onrender.com/api/employees/getAll`
       );
       setEmployee(response.data);
     } catch (error) {
