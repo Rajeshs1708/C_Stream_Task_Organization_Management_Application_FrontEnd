@@ -32,14 +32,6 @@ function EmployeeForm(props) {
         }
       );
       navigate("/employeesList");
-      console.log({
-        name,
-        dob,
-        phoneNumber,
-        address,
-        organization: organizationId,
-      });
-      console.log("Created Successfully");
     } catch (error) {
       console.error("Failed to fetch organizations:", error);
     }

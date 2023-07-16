@@ -19,7 +19,6 @@ function OrganizationDetails() {
       const response = await axios.get(
         `https://cstream-organization-management.onrender.com/api/organizations/getSingle/${id}`
       );
-      console.log(response.data);
       setOrganization(response.data);
     } catch (error) {
       console.error("Failed to fetch organization:", error);

@@ -13,7 +13,6 @@ function EmployeeList() {
       const response = await axios.get(
         `https://cstream-organization-management.onrender.com/api/employees/getAll`
       );
-      console.log(response.data);
       setEmployee(response.data);
     } catch (error) {
       console.error("Failed to fetch organization:", error);

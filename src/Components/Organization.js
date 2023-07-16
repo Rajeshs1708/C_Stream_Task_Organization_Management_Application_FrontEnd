@@ -18,7 +18,6 @@ function Organization(props) {
           address: address,
         }
       );
-      console.log({ name, registrationDate, address });
       console.log("Created Successfully");
     } catch (error) {
       console.error("Failed to fetch organizations:", error);
