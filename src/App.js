@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Components/Home";
+import Organization from "./Components/Organization";
+import Navbar from "./Components/Navbar";
+import OrganizationDetails from "./Components/OrganizationDetails";
+import EmployeeForm from "./Components/EmployeeForm";
+import axios from "axios";
+import EmployeeList from "./Components/EmployeeList";
 
 function App() {
+  const [organizations, setOrganizations] = useState([]);
+
+  useEffect(() => {
+    fetchOrganizations();
+  }, [organizations]);
+
+  const fetchOrganizations = async () => {
+    try {
+      const response = await axios.get(
+        "http://localhost:8080/api/organizations/getAll"
+      );
+      setOrganizations(response.data);
+    } catch (error) {
+      console.error("Failed to fetch organizations:", error);
+    }
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route
+          path="/organizations"
+          element={<Organization organizations={organizations} />}
+        />
+        <Route
+          path="/employees"
+          element={<EmployeeForm organizations={organizations} />}
+        />
+        <Route exact path="/employeesList" element={<EmployeeList />} />
+        <Route path="/organizations/:id" element={<OrganizationDetails />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,38 +1,69 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.home {
+  display: flex;
+  width: 100%;
+  height: 60vh;
+  justify-content: center;
+  align-items: center;
+}
+.organization_page,
+.employee_page {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.organization_form,
+.employee_form {
+  width: auto;
+  padding: 20px;
+}
+.organization_heading,
+.employee_heading,
+.employee_list_heading {
+  font-size: 30px;
+  font-weight: 300;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.organization_list {
+  width: auto;
+}
+.list-group a {
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.organization_details {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.organization_details ul {
+  width: 500px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 600px) {
+  .organization_page {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    justify-content: center;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+  .organization_form {
+    width: 200px;
+  }
+  .organization_list {
+    width: 200px;
   }
 }
