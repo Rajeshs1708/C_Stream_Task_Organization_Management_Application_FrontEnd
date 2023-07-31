@@ -22,7 +22,7 @@ function EmployeeList() {
     <div className="employee_list">
       <h3 className="employee_list_heading">Employee List</h3>
 
-      <table className="table table-hover">
+      <table className="table table-hover table-bordered ">
         <thead>
           <tr>
             <th scope="col">#</th>

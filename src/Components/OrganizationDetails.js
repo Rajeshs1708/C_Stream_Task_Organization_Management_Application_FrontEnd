@@ -62,6 +62,12 @@ function OrganizationDetails() {
             <span className=" text-primary">{organization.address}</span>
           </li>
           <li className="list-group-item d-flex justify-content-between align-items-center">
+            <strong>Number Of Employees:</strong>
+            <span className=" text-primary">
+              {organization.employees.length}
+            </span>
+          </li>
+          <li className="list-group-item d-flex justify-content-between align-items-center">
             <strong>Employees:</strong>
             <span className=" text-primary">
               <ol className="list-group">

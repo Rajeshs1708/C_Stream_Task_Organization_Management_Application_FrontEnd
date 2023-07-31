@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     fetchOrganizations();
-  }, [organizations]);
+  }, []);
 
   const fetchOrganizations = async () => {
     try {

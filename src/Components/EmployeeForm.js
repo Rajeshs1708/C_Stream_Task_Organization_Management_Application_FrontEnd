@@ -93,6 +93,7 @@ function EmployeeForm(props) {
               Organization
             </label>
             <select
+              className="select_option"
               value={organization}
               onChange={(e) => setOrganization(e.target.value)}
             >

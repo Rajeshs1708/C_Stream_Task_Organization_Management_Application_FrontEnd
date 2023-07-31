@@ -4,7 +4,7 @@ function Home() {
   return (
     <div className="home">
       <h2 className="display-6">
-        Welcome to the Organization Management Application
+        Welcome to the "Organization Management Application"
       </h2>
     </div>
   );

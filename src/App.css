@@ -9,6 +9,7 @@
   height: 60vh;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 .organization_page,
 .employee_page {
@@ -24,6 +25,14 @@
   width: auto;
   padding: 20px;
 }
+.employee_form .select_option {
+  display: block;
+  width: 100%;
+  outline: none;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 10px;
+}
 .organization_heading,
 .employee_heading,
 .employee_list_heading {
@@ -33,6 +42,17 @@
 }
 .organization_list {
   width: auto;
+}
+.employee_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.employee_list .table {
+  width: 65%;
+  height: auto;
 }
 .list-group a {
   width: 100%;
@@ -65,5 +85,15 @@
   }
   .organization_list {
     width: 200px;
+  }
+  .organization_details ul {
+    width: 350px;
+  }
+  .organization_details .list-group {
+    font-size: 13px;
+  }
+  .employee_list .table {
+    width: 30%;
+    height: auto;
   }
 }
