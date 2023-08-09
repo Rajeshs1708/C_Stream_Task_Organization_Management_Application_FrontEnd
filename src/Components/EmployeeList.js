@@ -14,6 +14,7 @@ function EmployeeList() {
         `https://cstream-organization-management.onrender.com/api/employees/getAll`
       );
       setEmployee(response.data);
+      console.log(employee);
     } catch (error) {
       console.error("Failed to fetch organization:", error);
     }

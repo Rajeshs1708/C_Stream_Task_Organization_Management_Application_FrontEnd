@@ -5,14 +5,14 @@ import axios from "axios";
 function OrganizationDetails() {
   const { id } = useParams();
   const [organization, setOrganization] = useState(null);
-  const [employee, setEmployee] = useState([]);
+  // const [employee, setEmployee] = useState([]);
 
   useEffect(() => {
     fetchOrganization();
   }, [id]);
-  useEffect(() => {
-    fetchEmployee();
-  }, []);
+  // useEffect(() => {
+  //   fetchEmployee();
+  // }, []);
 
   const fetchOrganization = async () => {
     try {
@@ -20,20 +20,21 @@ function OrganizationDetails() {
         `https://cstream-organization-management.onrender.com/api/organizations/getSingle/${id}`
       );
       setOrganization(response.data);
+      console.log(organization);
     } catch (error) {
       console.error("Failed to fetch organization:", error);
     }
   };
-  const fetchEmployee = async () => {
-    try {
-      const response = await axios.get(
-        `https://cstream-organization-management.onrender.com/api/employees/getAll`
-      );
-      setEmployee(response.data);
-    } catch (error) {
-      console.error("Failed to fetch organization:", error);
-    }
-  };
+  // const fetchEmployee = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       `https://cstream-organization-management.onrender.com/api/employees/getAll`
+  //     );
+  //     setEmployee(response.data);
+  //   } catch (error) {
+  //     console.error("Failed to fetch organization:", error);
+  //   }
+  // };
 
   if (!organization) {
     return (
@@ -62,7 +63,7 @@ function OrganizationDetails() {
             <span className=" text-primary">{organization.address}</span>
           </li>
           <li className="list-group-item d-flex justify-content-between align-items-center">
-            <strong>Number Of Employees:</strong>
+            <strong>No Of Employees:</strong>
             <span className=" text-primary">
               {organization.employees.length}
             </span>
