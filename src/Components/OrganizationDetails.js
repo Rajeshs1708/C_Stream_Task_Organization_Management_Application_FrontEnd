@@ -72,7 +72,7 @@ function OrganizationDetails() {
             <span className=" text-primary">
               <ol className="list-group">
                 {organization.employees.map((val, index) => (
-                  <li key={index}>{val}</li>
+                  <li key={index}>{val.name}</li>
                 ))}
               </ol>
             </span>

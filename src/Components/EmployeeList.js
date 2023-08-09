@@ -18,6 +18,9 @@ function EmployeeList() {
       console.error("Failed to fetch organization:", error);
     }
   };
+  if (!employee) {
+    return <h1>loading...</h1>;
+  }
   return (
     <div className="employee_list">
       <h3 className="employee_list_heading">Employee List</h3>
@@ -41,7 +44,7 @@ function EmployeeList() {
               <td>{new Date(val.dob).toLocaleDateString()}</td>
               <td>{val.phoneNumber}</td>
               <td>{val.address}</td>
-              <td>{val.organization}</td>
+              <td>{val.organization.name}</td>
             </tr>
           ))}
         </tbody>

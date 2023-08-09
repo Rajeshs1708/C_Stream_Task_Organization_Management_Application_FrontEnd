@@ -24,6 +24,9 @@ function Organization(props) {
     }
   };
 
+  if (props.organizations.length == 0) {
+    return <h1>loading...</h1>;
+  }
   return (
     <div className="organization_page">
       <div className="organization_form">
