@@ -23,7 +23,13 @@ function OrganizationDetails() {
 
   if (!organization) {
     return (
-      <p className="lead text-success">Loading organization details.....</p>
+      <div
+        className="d-flex align-items-center justify-content-center"
+        style={{ width: "100%", height: "60vh", gap: "20px" }}
+      >
+        <strong role="status">Loading Organization Details...</strong>
+        <div className="spinner-border" aria-hidden="true"></div>
+      </div>
     );
   }
 

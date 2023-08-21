@@ -10,7 +10,17 @@ function Navbar() {
       >
         <div className="container-fluid">
           <Link to="/" className="navbar-brand display-4">
-            Organization Management Application
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB4JqJstrqcJ3MbM1yaPHWyNE9piqQgn0asA&usqp=CAU"
+              alt=""
+              style={{
+                width: "50px",
+                borderRadius: "50%",
+                marginLeft: "20px",
+                marginRight: "20px",
+              }}
+            />
+            Management Application
           </Link>
           <button
             className="navbar-toggler"

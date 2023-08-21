@@ -52,6 +52,7 @@ function EmployeeForm(props) {
               className="form-control"
               id="exampleInputName"
               aria-describedby="textHelp"
+              placeholder="Employee Name"
             />
           </div>
           <div className="mb-3">
@@ -75,6 +76,7 @@ function EmployeeForm(props) {
               type="number"
               className="form-control"
               id="exampleInputNumber"
+              placeholder="Phone Number"
             />
           </div>
           <div className="mb-3">
@@ -86,6 +88,7 @@ function EmployeeForm(props) {
               type="text"
               className="form-control"
               id="exampleInputAddress"
+              placeholder="Address"
             />
           </div>
           <div className="mb-3">

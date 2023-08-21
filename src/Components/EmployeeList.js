@@ -18,8 +18,16 @@ function EmployeeList() {
       console.error("Failed to fetch organization:", error);
     }
   };
-  if (!employee) {
-    return <h1>loading...</h1>;
+  if (employee.length === 0) {
+    return (
+      <div
+        className="d-flex align-items-center justify-content-center"
+        style={{ width: "100%", height: "60vh", gap: "20px" }}
+      >
+        <strong role="status">Loading...</strong>
+        <div className="spinner-border" aria-hidden="true"></div>
+      </div>
+    );
   }
   return (
     <div className="employee_list">

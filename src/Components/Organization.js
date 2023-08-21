@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -6,6 +6,7 @@ function Organization(props) {
   const [name, setName] = useState("");
   const [registrationDate, setRegistrationDate] = useState("");
   const [address, setAddress] = useState("");
+  const [organizations, setOrganizations] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,8 +25,30 @@ function Organization(props) {
     }
   };
 
-  if (props.organizations.length == 0) {
-    return <h1>loading...</h1>;
+  useEffect(() => {
+    fetchOrganizations();
+  }, [organizations]);
+
+  const fetchOrganizations = async () => {
+    try {
+      const response = await axios.get(
+        "https://cstream-organization-management.onrender.com/api/organizations/getAll"
+      );
+      setOrganizations(response.data);
+    } catch (error) {
+      console.error("Failed to fetch organizations:", error);
+    }
+  };
+  if (organizations.length === 0) {
+    return (
+      <div
+        className="d-flex align-items-center justify-content-center"
+        style={{ width: "100%", height: "60vh", gap: "20px" }}
+      >
+        <strong role="status">Loading...</strong>
+        <div className="spinner-border" aria-hidden="true"></div>
+      </div>
+    );
   }
   return (
     <div className="organization_page">
@@ -43,6 +66,7 @@ function Organization(props) {
               className="form-control"
               id="exampleInputName"
               aria-describedby="textHelp"
+              placeholder="Organization Name"
             />
           </div>
           <div className="mb-3">
@@ -66,6 +90,7 @@ function Organization(props) {
               type="text"
               className="form-control"
               id="exampleInputAddress"
+              placeholder="Address"
             />
           </div>
 
@@ -79,7 +104,7 @@ function Organization(props) {
         <h3 className="organization_heading">Organization List</h3>
 
         <div className="list-group list-group-numbered">
-          {props.organizations.map((org) => (
+          {organizations.map((org) => (
             <Link
               key={org._id}
               className="list-group-item list-group-item-action"
